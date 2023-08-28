@@ -495,9 +495,9 @@ button {
      width: 100%;
 }
 
-.about .titlepage h2 {
+/* .about .titlepage h2 {
      margin-bottom: 35px;
-}
+} */
 
 .about .titlepage p {
      font-weight: 400;
@@ -599,7 +599,7 @@ button {
 /** gallery  section **/
 
 .gallery {
-     padding: 50px 0px 40px 0px;
+     padding: 20px 0px 40px 0px;
      background-color: #D8D8D8;
 }
 
