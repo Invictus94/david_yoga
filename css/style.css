@@ -503,7 +503,8 @@ button {
      font-weight: 400;
      font-size: 17px;
      line-height: 28px;
-     text-align: justify;
+     text-align: right;
+     white-space: break-spaces;
      color: var(--high-blue);
 }
 
