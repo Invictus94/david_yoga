@@ -29,6 +29,13 @@
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
+:root {
+     --high-blue: #4DB4D7;
+     --light-blue: #95D8EB;
+     --low-blue: #8BD9C7;
+     --low-green: #48BF91;
+   }
+
 * {
      box-sizing: border-box !important;
 }
@@ -73,7 +80,7 @@ h6 {
      padding: 0 0 10px 0;
      font-weight: normal;
      line-height: normal;
-     color: #111111;
+     color: var(--high-blue);
      margin: 0
 }
 
@@ -100,6 +107,9 @@ h5 {
 h6 {
      font-size: 13px
 }
+
+.dancing_font {
+     font-family: 'Abril Fatface', cursive;   }
 
 *,
 *::after,
@@ -227,7 +237,7 @@ button {
 .loader_bg {
      position: fixed;
      z-index: 9999999;
-     background: #647E6899;
+     background: var(--low-green)99;
      width: 100%;
      height: 100%;
 }
@@ -265,7 +275,7 @@ button {
 .navigation.navbar-dark .navbar-nav .nav-link {
      padding: 7px 0px 27px 0px;
      margin: 0 22px;
-     color: #010101;
+     color: var(--low-blue);
      font-size: 16px;
      line-height: 20px;
      font-weight: 500;
@@ -275,16 +285,16 @@ button {
 
 .navigation.navbar-dark .navbar-nav .nav-link:focus,
 .navigation.navbar-dark .navbar-nav .nav-link:hover {
-     color: #562B08;
-     border-bottom: #562B08 solid 3px;
+     color: var(--high-blue);
+     border-bottom: var(--high-blue) solid 3px;
 }
 
 .navigation.navbar-dark .navbar-nav .active>.nav-link,
 .navigation.navbar-dark .navbar-nav .nav-link.active,
 .navigation.navbar-dark .navbar-nav .nav-link.show,
 .navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #562B08;
-     border-bottom: #562B08 solid 3px;
+     color: var(--high-blue);
+     border-bottom: var(--high-blue) solid 3px;
 }
 
 .navbar-expand-md .navbar-nav {
@@ -324,7 +334,7 @@ button {
 }
 
 .banner .carousel-indicators .active {
-     background-color: #562B08;
+     background-color: var(--high-blue);
 }
 
 .booking_ocline {
@@ -337,14 +347,14 @@ button {
 .book_room {
      background-color: #000000c7;
      padding: 30px 35px;
-     border-left: #562B08 solid 5px;
+     border-left: var(--high-blue) solid 5px;
 }
 
 .book_room h1 {
      font-weight: 500;
      font-size: 30px;
      line-height: 30px;
-     color: #647E68;
+     color: var(--high-blue);
      padding-bottom: 20px;
      text-transform: uppercase;
      text-align: center;
@@ -352,7 +362,7 @@ button {
 
 .book_now span {
      display: block;
-     color: #647E68;
+     color: var(--high-blue);
      font-size: 18px;
      padding-bottom: 5px;
 }
@@ -379,7 +389,7 @@ button {
 }
 
 .book_btn {
-     background-color: #562B08;
+     background-color: var(--high-blue);
      max-width: 189px;
      width: 100%;
      margin: 0 auto;
@@ -393,7 +403,7 @@ button {
 
 .book_btn:hover {
      background-color: #647E6899;
-     color: #562B08;
+     color: var(--high-blue);
      transition: ease-in 0.5s;
 }
 
@@ -419,7 +429,7 @@ button {
 
 .titlepage h2 {
      font-size: 25px;
-     color: #121212;
+     color: var(--high-blue);
      line-height: 45px;
      font-weight: bold;
      text-transform: uppercase;
@@ -429,7 +439,7 @@ button {
 .titlepage h2::before {
      position: absolute;
      content: "";
-     background-color: #562B08;
+     background-color: var(--high-blue);
      width: 20px;
      height: 4px;
      transform: rotate(-36deg);
@@ -439,7 +449,7 @@ button {
 .titlepage h2::after {
      position: absolute;
      content: "";
-     background-color: #562B08;
+     background-color: var(--high-blue);
      width: 20px;
      height: 4px;
      transform: rotate(-36deg);
@@ -467,7 +477,7 @@ button {
 }
 
 .read_more:hover {
-     background: #562B08;
+     background: var(--high-blue);
      color: #647E6899;
      transition: ease-in all 0.5s;
 }
@@ -493,8 +503,8 @@ button {
      font-weight: 400;
      font-size: 17px;
      line-height: 28px;
-     padding-bottom: 35px;
      text-align: justify;
+     color: var(--high-blue);
 }
 
 .about_img {
@@ -683,7 +693,7 @@ button {
 
 .blog .blog_box .blog_room span {
      font-size: 15px;
-     color: #562B08;
+     color: var(--high-blue);
      font-weight: bold;
      margin-bottom: 10px;
      display: block;
@@ -701,7 +711,7 @@ button {
 /** contact section **/
 
 .contact {
-     background: #647E6899;
+     background: #647E6861;
      padding: 50px 0px 50px 0px;
 }
 
@@ -712,10 +722,23 @@ button {
      width: 100%;
      height: 58px;
      background: #647E6899;
-     color: #000000;
+     color: var(--light-blue);
      font-size: 18px;
      font-weight: normal;
      box-shadow: 2px 0px 6px rgba(207, 255, 141, 0.20);
+}
+
+.main_form .contactus::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+     color: var(--low-blue) !important;
+     opacity: 1; /* Firefox */
+}
+
+.main_form .contactus:-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: var(--low-blue) !important;
+}
+
+.main_form .contactus::-ms-input-placeholder { /* Microsoft Edge */
+     color: var(--low-blue) !important;
 }
 
 .main_form .textarea {
@@ -734,7 +757,7 @@ button {
 .main_form .send_btn {
      font-size: 22px;
      transition: ease-in all 0.5s;
-     background-color: #000000;
+     background-color: var(--light-blue);
      text-transform: uppercase;
      color: #647E68;
      padding: 10px 0px;
@@ -747,7 +770,7 @@ button {
 }
 
 .main_form .send_btn:hover {
-     background-color: #562B08;
+     background-color: var(--high-blue);
      transition: ease-in all 0.5s;
      color: #647E6899;
 }
@@ -773,7 +796,6 @@ button {
 
 .footer {
      background: #D8D8D8;
-     padding-top: 60px;
      text-align: center;
 }
 
@@ -781,16 +803,16 @@ button {
      font-weight: 600;
      font-size: 25px;
      line-height: 24px;
-     text-align: left;
-     color: #121212;
+     text-align: center;
+     color: var(--high-blue);
      margin-bottom: 15px;
-     border-bottom: #562B08 solid 3px;
+     border-bottom: var(--high-blue) solid 3px;
      padding-bottom: 3px;
      display: table;
 }
 
 ul.conta li {
-     color: #121212;
+     color: var(--high-blue);
      text-align: left;
      padding-bottom: 20px;
      font-size: 16px;
@@ -803,7 +825,7 @@ ul.conta li i {
 }
 
 ul.conta li a {
-     color: #121212;
+     color: var(--high-blue);
 }
 
 ul.link_menu li {
@@ -812,7 +834,7 @@ ul.link_menu li {
 }
 
 ul.link_menu li.active a {
-     color: #562B08;
+     color: var(--high-blue);
 }
 
 ul.link_menu li a {
@@ -824,7 +846,7 @@ ul.link_menu li a {
 }
 
 ul.link_menu li a:hover {
-     color: #562B08;
+     color: var(--high-blue);
 }
 
 .bottom_form {
@@ -862,7 +884,7 @@ ul.link_menu li a:hover {
      font-size: 17px;
      transition: ease-in all 0.5s;
      background-color: #647E6899;
-     color: #562B08;
+     color: var(--high-blue);
      padding: 8px 0px;
      max-width: 147px;
      width: 100%;
@@ -872,7 +894,7 @@ ul.link_menu li a:hover {
 }
 
 .sub_btn:hover {
-     background-color: #562B08;
+     background-color: var(--high-blue);
      transition: ease-in all 0.5s;
      color: #647E6899;
 }
@@ -895,18 +917,18 @@ ul.social_icon li a {
      font-size: 27px;
      border-radius: 30px;
      margin: 0 9px;
-     color: #121212;
+     color: var(--low-green);
 }
 
 ul.social_icon li a:hover {
-     color: #562B08;
+     color: var(--high-blue);
 }
 
 .copyright {
      margin-top: 60px;
      padding-bottom: 5px;
      background-color: #182747;
-     border: #562B08 solid 3px;
+     border: var(--high-blue) solid 3px;
      border-right: inherit;
      border-left: inherit;
 }
@@ -925,7 +947,7 @@ ul.social_icon li a:hover {
 }
 
 .copyright a:hover {
-     color: #562B08;
+     color: var(--high-blue);
 }
 
 
