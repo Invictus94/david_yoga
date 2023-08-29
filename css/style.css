@@ -47,7 +47,14 @@
 html {
      scroll-behavior: smooth;
      scroll-padding-top: 76px;
+     -ms-overflow-style: none;  /* IE and Edge */
+     scrollbar-width: none;  /* Firefox */
 }
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ html::-webkit-scrollbar {
+     display: none;
+   }
 
 body {
      color: #674747;
@@ -108,8 +115,11 @@ h6 {
      font-size: 13px
 }
 
-.dancing_font {
+.abril_font {
      font-family: 'Abril Fatface', cursive;   }
+
+     .satisfy_font {
+          font-family: 'Satisfy', cursive;   }
 
 *,
 *::after,
@@ -355,7 +365,6 @@ button {
      font-size: 30px;
      line-height: 30px;
      color: var(--high-blue);
-     padding-bottom: 20px;
      text-transform: uppercase;
      text-align: center;
 }
@@ -500,12 +509,14 @@ button {
 } */
 
 .about .titlepage p {
-     font-weight: 400;
+     /* font-weight: 400; */
      font-size: 17px;
      line-height: 28px;
-     text-align: right;
-     white-space: break-spaces;
+     text-align: justify;
+     /* white-space: break-spaces; */
      color: var(--high-blue);
+     padding-top: 20px;
+     padding-bottom: 20px;
 }
 
 .about_img {
