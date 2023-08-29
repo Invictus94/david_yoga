@@ -157,6 +157,72 @@ language.forEach(function(item) {
 
 }
 
+async function sendMail(name, email)
+{
+  return await Email.send({
+    SecureToken : "141b84e8-56ce-4d8c-a4a0-8dfce9160730",
+    To : "Davidgaubeyoga@gmail.com",
+    //To : "viktoreeeee@gmail.com",
+    From : "noreply.notification.provider@gmail.com",
+    Subject : `Novi zahtjev za Newsletter!`,
+    Body : `Ime: ${name} <br/> ${email}`})
+
+
+	//noreply.notification.provider@gmail.com
+	//CD2D71428F72D4E88DD61C270F1EADA05167
+	//smtp.elasticemail.com
+	//2525
+}
+
+async function trySendMail()
+{
+	var nameInput = document.getElementById("name_").value;
+	var mailInput = document.getElementById("mail_");
+	var btnSub = document.getElementById("sub_");
+	
+	const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+	if (emailPattern.test(mailInput.value)) {
+		//alert("Valid email address!");
+
+		var result = sendMail(nameInput, mailInput.value)
+		result.then(function(resultValue) {
+
+		//	console.log(resultValue)
+
+		if(resultValue == "OK")
+		{
+			mailInput.style.border = "#647E6899 solid 1px"; // Valid email style
+			btnSub.removeEventListener("click", checkButtonClickHandler);
+			btnSub.addEventListener("click", function(event) {
+				event.preventDefault()
+			});
+	
+			btnSub.style.backgroundColor = 'var(--high-blue)';
+			btnSub.style.color = 'var(--light-blue)';
+			btnSub.innerHTML = 'Thanks! 😊';
+		}
+		else
+		{
+			mailInput.style.border = "2px solid red"; // Invalid email style
+
+		  }
+
+		});
+
+
+	} else {
+		//alert("Invalid email address!");
+
+		mailInput.style.border = "2px solid red"; // Invalid email style
+	}
+
+	// console.log(nameInput)
+	// console.log(mailInput.value)
+
+}
+
+
 $(function () {
 	
 	"use strict";
@@ -167,6 +233,7 @@ $(function () {
 	setTimeout(function () {
 		$('.loader_bg').fadeToggle();
 		document.body.style.overflow = 'scroll'
+
 	}, 500);
 	
 	/* Language
@@ -229,6 +296,13 @@ $(function () {
 
 window.onload = function() {
 
+
+	document.getElementById("sub_").addEventListener("click", checkButtonClickHandler);
+
+
+
+
+
 	var clickableImage = document.getElementById("eng_");
   
 	clickableImage.addEventListener("click", function() {
@@ -244,4 +318,10 @@ window.onload = function() {
 			$('[aria-label="Toggle navigation"]').click();
 		}
 	}
+}
+
+function checkButtonClickHandler(event) {
+	event.preventDefault(); // Prevent the default form submission behavior
+
+		trySendMail()
 }
