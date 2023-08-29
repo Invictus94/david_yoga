@@ -14,7 +14,7 @@ function setLanguage(change)
 		{
 			var clickableImage = document.getElementById("eng_");
 			clickableImage.id = "hr_";
-			clickableImage.src = "images/croatia.png";
+			clickableImage.src = "images/united-kingdom.png";
 
 			currentLang = "hr"
 		}
@@ -22,7 +22,7 @@ function setLanguage(change)
 		{
 			var clickableImage = document.getElementById("hr_");
 			clickableImage.id = "eng_";
-			clickableImage.src = "images/united-kingdom.png";
+			clickableImage.src = "images/croatia.png";
 
 			currentLang = "en"
 		}
